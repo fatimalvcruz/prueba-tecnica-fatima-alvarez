@@ -39,9 +39,11 @@ export class ShowCatComponent implements OnInit {
   getGiftUrl(_firstThreeWords: string){
     this.gifServicio.getGiphbySearch(_firstThreeWords).subscribe({
       next:(respuesta:any) =>{
-        this.catGiph = respuesta.data[0].images.original.url;
+        this.catGiph = '';
+        if (respuesta.data.length > 0) {
+          this.catGiph = respuesta.data[0].images.original.url;
+        }
         this.loading = false;
-        console.log(this.catGiph);
       },
       error:(respuesta: Response) =>{
         this.error = true;

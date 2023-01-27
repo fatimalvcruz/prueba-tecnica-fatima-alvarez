@@ -16,7 +16,7 @@
         </div>
         <div class="factandgif__card">
             <div class="factandgif__card__gif">
-                <img src="{{catGiph}}" alt="Gif_random">
+                <img *ngIf="catGiph" src="{{catGiph}}" alt="Gif_random">
             </div>
             <div class="factandgif__card__fact">
                 <h2>{{catFact}}</h2>

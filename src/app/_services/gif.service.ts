@@ -15,7 +15,7 @@ export class GifService {
 
 
 getGiphbySearch(word:string):Observable<any>{
-  return this.http.get(`${this.url}/search?api_key=${this.apiKey}&q=${word}&limit=${this.limit}`);
+  return this.http.get(`${this.url}/search?api_key=${this.apiKey}&q=${encodeURI(word)}&limit=${this.limit}`);
 }
 
 }
