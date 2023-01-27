@@ -43,8 +43,8 @@ Aunque se especificaba que la imagen quedara posionada a la izquierda y el texto
 
 ## Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Netlify](https://faq-challenge-accordion.netlify.app)
+- GITHUB: https://github.com/fatimalvcruz/prueba-tecnica-fatima-alvarez
+- Netlify: https://cat-facts-gif.netlify.app/
 
 
 # Prueba Tecnica Fatima Alvarez
