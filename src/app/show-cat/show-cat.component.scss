@@ -4,7 +4,11 @@ header{
     height: 40px;
     line-height: 40px;
     background-color: $color2;
-  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
     nav{
         h1{
             color: $color5;
@@ -59,10 +63,14 @@ main{
             margin: 0 auto;
             padding: 40px 0 20px;
             text-align: center;
+            position: fixed;
+            right: 20px;
+            width: auto;
+            bottom: 40px;
+
             button{
                 border-radius: 5px;
                 border-color: $color2;
-                width: 27%;
                 padding: 10px;
                 font-size: 1.1em;
                 letter-spacing: 3px;
@@ -71,10 +79,12 @@ main{
             }
         }
         .factandgif__card{
-            margin-top:50px;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            align-items: center;
+            height: 100vh;
+            
             .factandgif__card__gif{
                 max-width: fit-content;
                 outline: 3px solid $color5;
