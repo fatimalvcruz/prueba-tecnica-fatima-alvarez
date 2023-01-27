@@ -1,9 +1,132 @@
 @import '/src/styles/variables';
 
-h1{
-    color: $color-primary;
-    background-color: aquamarine;
+header{
+    height: 40px;
+    background-color: $color2;
+  
+    nav{
+        h1{
+            color: $color5;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 1em;
+            font-weight: bold;
+              a{
+            text-decoration: none;
+            color: $color5;
+            &.active, &:hover {
+                color: $color4;
+                text-decoration:underline;
+                    }
+                }
+        }
+    }
 }
-h2{
-    font-size: 16px;
+
+main{
+    margin-bottom: 20px;
+    padding-bottom: 50px;
+    .main__controlError{
+        margin: 0 auto;
+        padding-top: 50px;
+        align-items: center;
+        .controlError__error{
+            justify-content: center;
+            color: $color2;
+            font-size: 1.8em;
+            margin: 0 auto;
+            font-weight: bold;
+            display: flex;
+        }
+    }
+    .main__loader{
+        margin: 0 auto;
+        margin-top: 50px ;
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid $color2;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    }
+    .main__factandgif{
+        .main__factandgif__button{
+            margin: 0 auto;
+            padding: 40px 0 20px;
+            text-align: center;
+            button{
+                border-radius: 5px;
+                border-color: $color2;
+                width: 27%;
+                padding: 10px;
+                font-size: 1.1em;
+                letter-spacing: 3px;
+                background-color: $color2;
+                color: $color5;
+            }
+        }
+        .factandgif__card{
+            margin-top:50px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .factandgif__card__gif{
+                max-width: fit-content;
+                outline: 3px solid $color5;
+                outline-offset: -10px;
+              
+                img{
+                    padding: 0 0 20px 20px;
+                }
+            }
+            .factandgif__card__fact{
+                justify-content: end;
+                align-self: center;
+                width: 40%;
+                outline: 3px solid $color5;
+                outline-offset: 10px;
+                background-color:$color6;
+                h2{
+                   font-size: 1em;
+                   line-height: 1.5em;
+                   font-weight: bolder;
+                   text-align: justify;
+                 
+                }
+            }
+        } 
+    }
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $color2;
+    height: 40px;
+    width: 100%;
+    
+    .footer__text{
+        color: $color5;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 2vh;
+        font-size: 1em;
+        a{
+            text-decoration: none;
+            color: $color5;
+            &.active, &:hover {
+                color: $color4;
+                text-decoration:underline;
+              }
+        }
+    }
+
 }
+
+
+
+

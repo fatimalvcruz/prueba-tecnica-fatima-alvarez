@@ -8,54 +8,53 @@ import { GifService } from '../_services/gif.service';
   styleUrls: ['./show-cat.component.scss']
 })
 export class ShowCatComponent implements OnInit {
-  catFact: any = {};
-  firstThreeWord: string = '';
+  catFact: string = "";
   error: boolean = false;
   message: string = "Hay un error en la carga";
-  loading: boolean | undefined;
-  catGiph: any ;
+  loading: boolean = true;
+  catGiph: string = '';
 
   constructor(private catServicio: CatFactService, private gifServicio: GifService ) { 
-
   }
 
 
   ngOnInit(): void {
-    this.loading = true;
-
-    this.catServicio.getCatfact().subscribe({
-      next:(respuesta: any) => {
-        this.catFact = respuesta;
-        this.loading = false;
-        this.firstThreeWord = this.catFact.fact.split(' ').slice(0, 3).join(" ");
-        this.hola();
-        console.log(this.catFact.fact);
-        console.log(this.firstThreeWord);
-
-      },
-      error:(respuesta: Response) =>{
-        this.error = true;
-      }
-     
-  });
-
+    this.runApp();
   }
 
-  hola(){
-    this.gifServicio.getGiphbySearch(this.firstThreeWord).subscribe({
-      next:(respuesta:any) =>{
-        this.loading = false;
-        this.catGiph = respuesta;
-        console.log(this.catGiph.data[0].images.original.url);
-  
+  runApp(){
+    this.catServicio.getCatfact().subscribe({
+      next:(respuesta: any) => {
+        this.catFact = respuesta.fact;
+        let firstThreeWords = this.catFact.split(' ').slice(0, 3).join(" ");
+        this.getGiftUrl(firstThreeWords);
       },
       error:(respuesta: Response) =>{
         this.error = true;
-  
       }
-    })
-  
+  });
+ 
+  }
 
+  getGiftUrl(_firstThreeWords: string){
+    this.gifServicio.getGiphbySearch(_firstThreeWords).subscribe({
+      next:(respuesta:any) =>{
+        this.catGiph = respuesta.data[0].images.original.url;
+        this.loading = false;
+        console.log(this.catGiph);
+      },
+      error:(respuesta: Response) =>{
+        this.error = true;
+      }
+    });
+  }
+
+  refresh(){
+    this.loading = true;
+    this.runApp();
+
+
+    
   }
  
 

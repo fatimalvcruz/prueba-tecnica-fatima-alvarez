@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class GifService {
   constructor(private http: HttpClient) { }
 
 
-getGiphbySearch(word:string){
+getGiphbySearch(word:string):Observable<any>{
   return this.http.get(`${this.url}/search?api_key=${this.apiKey}&q=${word}&limit=${this.limit}`);
 }
 

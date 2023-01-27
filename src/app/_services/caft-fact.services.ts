@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class CatFactService {
 
   constructor(private http: HttpClient) { }
 
-  getCatfact():any{
+  getCatfact():Observable<any>{
     return this.http.get(this.url);
   }
 

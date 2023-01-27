@@ -1,32 +1,30 @@
 
 <header class="header" role="header">
     <nav class="header__nav" role="navigation">
-
+        <h1>Prueba Técnica <a href="https://github.com/fatimalvcruz" target="_blank">Fátima Álvarez de la Cruz</a> </h1>
     </nav>
-
 </header>
-
 <main class="main" role="main">
-    <div>
-        <h2>{{catFact.fact}}</h2>
+    <div *ngIf="error" class="main__controlError">
+        <div class="controlError__error"> {{message}}</div>
+    </div> 
+    <div class="main__loader" *ngIf="loading" ></div>
 
+    <div *ngIf="! loading" class="main__factandgif">
+        <div class="main__factandgif__button">
+                <button (click)=" refresh()">Refresh</button>
+        </div>
+        <div class="factandgif__card">
+            <div class="factandgif__card__gif">
+                <img src="{{catGiph}}" alt="Gif_random">
+            </div>
+            <div class="factandgif__card__fact">
+                <h2>{{catFact}}</h2>
+            </div>
+        </div>
     </div>
-    <div>
-        
-        <p>{{firstThreeWord}}</p>
-       
-        <img src="" alt="">
-        <p>{{catGiph}}</p>
-
-    </div>
-
-
-
-
- 
-  
 </main>
 <footer class="footer" role="contentinfo">
-
+    <p class="footer__text">By <a href="https://github.com/fatimalvcruz" target="_blank">Fátima </a></p>
 </footer>
 
